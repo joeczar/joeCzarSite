@@ -18,7 +18,10 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
-            social { twitter }
+            social { 
+              twitter
+              github 
+            }
           }
         }
       }
@@ -65,6 +68,22 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          name: `github:card`,
+          content: `summary`,
+        },
+        {
+          name: `github:creator`,
+          content: site.siteMetadata.social.github,
+        },
+        {
+          name: `github:title`,
+          content: title,
+        },
+        {
+          name: `github:description`,
           content: metaDescription,
         },
       ].concat(meta)}

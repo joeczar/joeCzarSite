@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
+import "./bio.css"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -57,11 +58,17 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+        Written by <strong>{author.name}</strong><div id="summary">{author.summary}</div>
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
+        <div className="socialBio">
+        Find me Here:
+        <a id="twitter" href={`https://twitter.com/${social.twitter}`}>
+           Twitter
         </a>
+        <a id="github" href={`https://github.com/${social.github}`}>
+           GitHub
+        </a>
+        </div>
       </p>
     </div>
   )
