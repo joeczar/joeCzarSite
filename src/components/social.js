@@ -19,9 +19,8 @@ const Social = () => {
         }
       }
     `)
-    console.log(data);
     return (
-        <div>Social!</div>
+    <div>{data.social.github}</div>
     )
     
 }
