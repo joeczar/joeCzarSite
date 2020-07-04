@@ -30,6 +30,7 @@ const Bio = () => {
           }
           social {
             twitter
+            github
           }
         }
       }
@@ -37,6 +38,8 @@ const Bio = () => {
   `)
 
   const { author, social } = data.site.siteMetadata
+  console.log(social);
+  
   return (
     <div
       style={{
@@ -62,10 +65,10 @@ const Bio = () => {
         {` `}
         <div className="socialBio">
         Find me Here:
-        <a id="twitter" href={`https://twitter.com/${social.twitter}`}>
+        <a id="twitter" href={social.twitter}>
            Twitter
         </a>
-        <a id="github" href={`https://github.com/${social.github}`}>
+        <a id="github" href={social.github}>
            GitHub
         </a>
         </div>

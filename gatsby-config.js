@@ -1,15 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Stuff I do`,
+    title: `JoeCzar - Developer`,
     author: {
       name: `Joe Czarnecki`,
-      summary: `An autodidact living with ADHD and BiPolar-Disorder in Berlin, currently learning Scala, React, and fiddling with silly Python projects.`,
+      summary: `An autodidact because I have to be. Currently a Web Developer living in Berlin. Formerly, Digital Education Program Developer for Save the Children Germany, a Media Educator, an English Teacher, and a Musician.`,
     },
-    description: `Things I'm learning and making.`,
+    description: `Contact and Portfolio site.`,
     siteUrl: `https://joeczar.com/`,
     social: {
-      twitter: `joeczar`,
-      github: `joeczar` 
+      twitter: `https://twitter.com/RollerDev`,
+      github: `https://github.com/joeczar`,
+      linkedIn: `https://www.linkedin.com/in/joe-czarnecki-berlin/`,
     },
   },
   plugins: [
@@ -25,6 +26,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/projects`,
+        name: `projects`,
       },
     },
     {
@@ -67,7 +75,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/joecz-logo.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

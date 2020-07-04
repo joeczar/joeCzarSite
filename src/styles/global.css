@@ -1,6 +1,15 @@
+#___gatsby, #gatsby-focus-wrapper, body {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
 body {
     background-color: black;
     color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 a {
     text-decoration: none !important;

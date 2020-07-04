@@ -1,0 +1,81 @@
+.logo {
+  filter: url(#f2);
+}
+.joecz {
+  visibility: hidden;
+  
+  -webkit-animation: buzz 0.005s infinite;
+  animation: buzz 0.005s infinite;
+}
+
+#J {
+  fill: none;
+  fill-rule: nonzero;
+  stroke: #ef4136;
+  stroke-width: 10px;
+  
+  -webkit-animation: blinky 5s 0s infinite;
+  animation: blinky 5s 0s infinite;
+}
+#o {
+  fill: none;
+  fill-rule: nonzero;
+  stroke: #50d2cb;
+  stroke-width: 10px;
+  
+  -webkit-animation: blinky 5s 1s infinite;
+  animation: blinky 5s 1s infinite;
+}
+
+#e {
+  fill: none;
+  fill-rule: nonzero;
+  stroke: #a4d7d0;
+  stroke-width: 10px;
+  -webkit-animation: blinky 5s 2s infinite;
+  animation: blinky 5s 2s infinite;
+}
+#c {
+  fill: none;
+  fill-rule: nonzero;
+  stroke: #7ec245;
+  stroke-width: 10px;
+  -webkit-animation: blinky 5s 3s infinite;
+  animation: blinky 5s 3s infinite;
+}
+#z {
+  fill: none;
+  fill-rule: nonzero;
+  stroke: #ebf9f0;
+  stroke-width: 10px;
+  -webkit-animation: blinky 5s 4s infinite;
+  animation: blinky 5s 4s infinite;
+}
+
+@-webkit-keyframes blinky {
+  0% {
+    visibility: visible;
+  }
+  20% {
+    visibility: hidden;
+  }
+}
+@keyframes blinky {
+  0% {
+    visibility: visible;
+  }
+  20% {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes buzz {
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes buzz {
+  50% {
+    opacity: 0.7;
+  }
+}

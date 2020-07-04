@@ -1,0 +1,8 @@
+.wrapper {
+    min-height: 95vh;;
+}
+
+.header {
+    display: flex;
+    margin: 0px auto;
+}
