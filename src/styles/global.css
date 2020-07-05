@@ -1,16 +1,27 @@
-#___gatsby, #gatsby-focus-wrapper, body {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+/* #ef4136  #50d2cb  #a4d7d0 #7ec245 #ebf9f0 */
+
+#___gatsby,
+#gatsby-focus-wrapper,
+body {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 body {
-    background-color: black;
-    color: lightgray;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
+  background-color: black;
+  color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #a4d7d0;
 }
 a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }

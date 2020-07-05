@@ -1,9 +1,10 @@
 .logo {
   filter: url(#f2);
+  height: 70vh;
 }
 .joecz {
   visibility: hidden;
-  
+
   -webkit-animation: buzz 0.005s infinite;
   animation: buzz 0.005s infinite;
 }
@@ -13,7 +14,7 @@
   fill-rule: nonzero;
   stroke: #ef4136;
   stroke-width: 10px;
-  
+
   -webkit-animation: blinky 5s 0s infinite;
   animation: blinky 5s 0s infinite;
 }
@@ -22,7 +23,7 @@
   fill-rule: nonzero;
   stroke: #50d2cb;
   stroke-width: 10px;
-  
+
   -webkit-animation: blinky 5s 1s infinite;
   animation: blinky 5s 1s infinite;
 }

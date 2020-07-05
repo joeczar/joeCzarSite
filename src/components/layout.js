@@ -12,9 +12,12 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h1
         style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
+          ...scale(1),
+          marginBottom: rhythm(0.5),
           marginTop: 0,
+          marginLeft: "auto",
+          marginRight: "auto",
+          textAlign: "center",
         }}
       >
         <Link
@@ -52,6 +55,7 @@ const Layout = ({ location, title, children }) => {
   }
   return (
     <div
+      className={styles.wrapper}
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
@@ -61,7 +65,7 @@ const Layout = ({ location, title, children }) => {
     >
       <header className={styles.header}>{header}</header>
       <main className={styles.main}>{children}</main>
-      <footer className={styles.header}>
+      <footer className={styles.footer}>
         © {new Date().getFullYear()},{` `}
         Joe Czarnecki
       </footer>

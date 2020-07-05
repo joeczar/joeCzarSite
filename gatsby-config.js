@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `JoeCzar - Developer`,
+    title: `JoeCzar | Developer`,
     author: {
       name: `Joe Czarnecki`,
       summary: `An autodidact because I have to be. Currently a Web Developer living in Berlin. Formerly, Digital Education Program Developer for Save the Children Germany, a Media Educator, an English Teacher, and a Musician.`,

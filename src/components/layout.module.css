@@ -1,8 +1,19 @@
 .wrapper {
-    min-height: 95vh;;
+  min-height: 100vh;
 }
 
 .header {
-    display: flex;
-    margin: 0px auto;
+  display: flex;
+  margin: -20px auto;
+}
+.main {
+  margin-bottom: 20px;
+}
+.footer {
+  /* margin-bottom: -60px; */
+  margin-top: 20px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  color: darkslateblue;
 }
