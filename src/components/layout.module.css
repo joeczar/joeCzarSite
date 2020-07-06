@@ -5,9 +5,11 @@
 .header {
   display: flex;
   margin: -20px auto;
+  height: 10vh;
 }
 .main {
   margin-bottom: 20px;
+  height: 90vh;
 }
 .footer {
   /* margin-bottom: -60px; */
