@@ -13,7 +13,9 @@
   var closeMenuBtn = $("#closeMenu")
   var saveBtn = $("#save")
   var clearBtn = $("#clear")
+  var loadBtn = $("#load")
   var savedGames = $("#gamesWrapper")
+  var loadGame
   var game
   var finished
 
@@ -32,12 +34,17 @@
   })
   savedGames.on("click", "div", e => {
     const index = $(e.target).attr("id")
-    console.log(index)
-    loadSavedGame(index)
+
+    loadGame = loadSavedGame(index)
     $(e.target).addClass("selected")
     $(e.target)
       .siblings()
       .removeClass("selected")
+  })
+  loadBtn.on("click", () => {
+    console.log(loadGame)
+
+    playSavedGame(loadGame)
   })
 
   function drop(e) {
@@ -267,19 +274,23 @@
         p2Input.off("input", handleP2Input)
         ok.off("click", handleOk)
 
-        game = new ConnectFour(names[0], names[1])
-        $("#playerName1").text(names[0])
-        $("#playerName2").text(names[1])
-        clearBoard()
-
-        $(".column").on("click", drop)
-        start.text("New Game!")
-        start.off("click", startGame)
-        start.on("click", samePlayers)
+        newGame(names)
       }
     }
   }
+  function newGame(names) {
+    console.log(names)
 
+    game = new ConnectFour(names[0], names[1])
+    $("#playerName1").text(names[0])
+    $("#playerName2").text(names[1])
+    clearBoard()
+
+    $(".column").on("click", drop)
+    start.text("New Game!")
+    start.off("click", startGame)
+    start.on("click", samePlayers)
+  }
   function victory() {
     var nameArr = game.getPLayerName()
     var victory = $("#victory")
@@ -308,6 +319,8 @@
       "Player One " + game.player1.score,
       "Player Two " + game.player2.score
     )
+    // erase game history
+    game.history = []
 
     function closeVictory(e) {
       victory.removeClass("show").addClass("hide")
@@ -347,9 +360,12 @@
     }
     this.history = []
     this.playedGames = []
-    this.play = function(player, position) {
+    this.saveBoard = function() {
       var oldBoard = JSON.stringify(this.board)
       this.history.push(oldBoard)
+    }
+    this.play = function(player, position) {
+      this.saveBoard()
       var coin = player === "player1" ? "X" : "O"
       this.board[position[1]][position[0]] = coin
       this.getPLayerName()
@@ -408,6 +424,8 @@
     console.log(games, html)
   }
   function saveGame() {
+    //save current frame
+    game.saveBoard()
     // check local storage
     var save = new savedGame(game)
     var games = getLocalStorage()
@@ -446,10 +464,57 @@
     loadGames()
   }
   function loadSavedGame(index) {
-    const games = getLocalStorage()
-    const game = games[index]
-    console.log(game)
+    var games = getLocalStorage()
+    var savedGame = games[index].game
+    return savedGame
+  }
+  function playSavedGame(savedGame) {
+    var player1 = savedGame.player1.name
+    var player2 = savedGame.player2.name
 
-    return game
+    newGame([player1, player2])
+    game.player1 = savedGame.player1
+    game.player2 = savedGame.player2
+    game.history = savedGame.history
+    game.playedGames = savedGame.playedGames
+    $("#p1Point").text(game.player1.score)
+    $("#p2Point").text(game.player2.score)
+    // check if history is empty & load board if not
+    if (game.history.length > 1) {
+      //get last game frame
+      var last = game.history.length - 1
+      var lastFrame = game.history[last]
+      console.log(lastFrame)
+      setBoard(lastFrame)
+    }
+    function setBoard(frame) {
+      var arr = JSON.parse(frame)
+      for (var i = 0; i < slots.length; i++) {
+        var col = columns.indexOf(
+          slots
+            .eq(i)
+            .parent()
+            .attr("id")
+        )
+        var rowClasses = slots
+          .eq(i)
+          .attr("class")
+          .split(" ")
+        var row = Number(rowClasses[1].slice(-1) - 1)
+        console.log(col, row)
+
+        if (arr[row][col] === "X") {
+          slots.eq(i).addClass("player1")
+        } else if (arr[row][col] === "O") {
+          slots.eq(i).addClass("player2")
+        }
+      }
+
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 7; j++) {
+          console.log(arr[i][j], i, j)
+        }
+      }
+    }
   }
 })()
