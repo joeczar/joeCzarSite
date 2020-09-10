@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi"
+import { FiGithub, FiLinkedin } from "react-icons/fi"
+import { AiOutlineFilePdf } from "react-icons/ai"
 import { IconContext } from "react-icons"
 import styles from "./social.module.css"
 
@@ -10,7 +11,6 @@ const Social = () => {
       site {
         siteMetadata {
           social {
-            twitter
             github
             linkedIn
           }
@@ -33,8 +33,8 @@ const Social = () => {
         <a href={social.linkedIn} className={styles.links}>
           <FiLinkedin className={styles.socialIcons} />
         </a>
-        <a href={social.twitter} className={styles.links}>
-          <FiTwitter className={styles.socialIcons} />
+        <a href="/Joe-Czarnecki-cv-hyperlinked.pdf" className={styles.links}>
+          <AiOutlineFilePdf className={styles.socialIcons} />
         </a>
       </IconContext.Provider>
     </div>
