@@ -18,6 +18,8 @@ const Layout = ({ location, title, children }) => {
           marginLeft: "auto",
           marginRight: "auto",
           textAlign: "center",
+          fontFamily: `montserrat-alternates, sans-serif`,
+          fontWeight: 800,
         }}
       >
         <Link
@@ -36,7 +38,7 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h3
         style={{
-          fontFamily: `Montserrat, sans-serif`,
+          fontFamily: `montserrat-alternates, sans-serif`,
           marginTop: 0,
         }}
       >
