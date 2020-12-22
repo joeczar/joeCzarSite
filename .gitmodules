@@ -1,0 +1,3 @@
+[submodule "static/projects/vhv"]
+	path = static/projects/vhv
+	url = https://git.db-n.com/joe.czarnecki/vhv.git
