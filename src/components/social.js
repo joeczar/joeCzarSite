@@ -33,7 +33,10 @@ const Social = () => {
         <a href={social.linkedIn} className={styles.links}>
           <FiLinkedin className={styles.socialIcons} />
         </a>
-        <a href="/JoeCzarnecki-Resume.pdf" className={styles.links}>
+        <a
+          href="/Joe_Czarnecki_Web_Developer_2022.pdf"
+          className={styles.links}
+        >
           <AiOutlineFilePdf className={styles.socialIcons} />
         </a>
       </IconContext.Provider>
