@@ -6,7 +6,11 @@ Wordpress2016.overrideThemeStyles = () => {
     a: {
       textDecoration: `none`,
     },
+
     "a.gatsby-resp-image-link": {
+      boxShadow: `none`,
+    },
+    a: {
       boxShadow: `none`,
     },
   }

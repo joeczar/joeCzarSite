@@ -10,7 +10,7 @@ module.exports = {
     social: {
       twitter: `https://twitter.com/RollerDev`,
       github: `https://github.com/joeczar`,
-      linkedIn: `https://www.linkedin.com/in/joe-czarnecki-berlin/`,
+      linkedIn: `https://www.linkedin.com/in/joe-czar/`,
     },
   },
   plugins: [

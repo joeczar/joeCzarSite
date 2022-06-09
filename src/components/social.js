@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { FiGithub, FiLinkedin } from "react-icons/fi"
 import { AiOutlineFilePdf } from "react-icons/ai"
@@ -19,7 +19,12 @@ const Social = () => {
     }
   `)
   const social = data.site.siteMetadata.social
-
+  const [showDownloads, setShowDownloads] = useState(false)
+  const handleShowDownloads = () => {
+    setTimeout(() => {
+      setShowDownloads(!showDownloads)
+    }, 200)
+  }
   return (
     <div className={styles.container}>
       <IconContext.Provider value={{ className: "socialIcons" }}>
@@ -33,12 +38,26 @@ const Social = () => {
         <a href={social.linkedIn} className={styles.links}>
           <FiLinkedin className={styles.socialIcons} />
         </a>
-        <a
-          href="/Joe_Czarnecki_Web_Developer_2022.pdf"
+        <div
+          onPointerDown={() => handleShowDownloads()}
           className={styles.links}
         >
           <AiOutlineFilePdf className={styles.socialIcons} />
-        </a>
+          {showDownloads && (
+            <div className={styles.downloads}>
+              <a target="_blank" href={`Joe_Czarnecki_Web_Developer_2022.pdf`}>
+                <span className={styles.downloadTitle}>English</span>
+              </a>
+              <span>|</span>
+              <a
+                target="_blank"
+                href={`Joe_Czarnecki_Web_Developer_2022_Deutsch.pdf`}
+              >
+                <span className={styles.downloadTitle}>Deutsch</span>
+              </a>
+            </div>
+          )}
+        </div>
       </IconContext.Provider>
     </div>
   )
