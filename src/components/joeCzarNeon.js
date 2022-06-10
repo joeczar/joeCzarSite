@@ -5,7 +5,6 @@ export default function JoeCzNeon(props) {
   return (
     <svg
       className={style.logo}
-      width="100%"
       height={props.height}
       viewBox="0 0 719 913"
       version="1.1"

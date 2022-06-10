@@ -1,10 +1,11 @@
 import React from "react"
+import style from "./joeCzar.module.css"
 
 export default function JoeCzNeon(props) {
   return (
     <svg
-      width="100%"
-      height="100%"
+      // width="100%"
+      // height="100%"
       viewBox="0 0 719 913"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +13,7 @@ export default function JoeCzNeon(props) {
       xmlSpace="preserve"
       style={{ fillRule: "evenodd", clipRule: "evenodd", strokeMiterlimit: 10 }}
       {...props}
+      className={style.letters}
     >
       <g id="JoeCz">
         <g id="J">
