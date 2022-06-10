@@ -20,10 +20,13 @@ const Social = () => {
   `)
   const social = data.site.siteMetadata.social
   const [showDownloads, setShowDownloads] = useState(false)
-  const handleShowDownloads = () => {
-    setTimeout(() => {
-      setShowDownloads(!showDownloads)
-    }, 200)
+  const handleShowDownloads = e => {
+    console.log("handleShowDownloads", { currentTarget: e.currentTarget })
+    if (e.currentTarget.id === "downloads") {
+      setTimeout(() => {
+        setShowDownloads(!showDownloads)
+      }, 200)
+    }
   }
   return (
     <div className={styles.container}>
@@ -39,8 +42,9 @@ const Social = () => {
           <FiLinkedin className={styles.socialIcons} />
         </a>
         <div
-          onPointerDown={() => handleShowDownloads()}
+          onPointerDown={e => handleShowDownloads(e)}
           className={styles.links}
+          id="downloads"
         >
           <AiOutlineFilePdf className={styles.socialIcons} />
           {showDownloads && (
