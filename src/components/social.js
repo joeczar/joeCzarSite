@@ -25,44 +25,43 @@ const Social = () => {
     if (e.currentTarget.id === "downloads") {
       setTimeout(() => {
         setShowDownloads(!showDownloads)
-      }, 200)
+      }, 300)
     }
   }
   return (
     <div className={styles.container}>
-      <IconContext.Provider value={{ className: "socialIcons" }}>
-        <a
-          href={social.github}
-          className={styles.links}
-          style={{ textDecorationColor: "black", border: "none" }}
-        >
-          <FiGithub className={styles.socialIcons} />
-        </a>
-        <a href={social.linkedIn} className={styles.links}>
-          <FiLinkedin className={styles.socialIcons} />
-        </a>
-        <div
-          onPointerDown={e => handleShowDownloads(e)}
-          className={styles.links}
-          id="downloads"
-        >
-          <AiOutlineFilePdf className={styles.socialIcons} />
-          {showDownloads && (
-            <div className={styles.downloads}>
-              <a target="_blank" href={`Joe_Czarnecki_Web_Developer_2022.pdf`}>
-                <span className={styles.downloadTitle}>English</span>
-              </a>
-              <span>|</span>
-              <a
-                target="_blank"
-                href={`Joe_Czarnecki_Web_Developer_2022_Deutsch.pdf`}
-              >
-                <span className={styles.downloadTitle}>Deutsch</span>
-              </a>
-            </div>
-          )}
+      {showDownloads && (
+        <div className={styles.downloads} id="tooltip">
+          <a href={`Joe_Czarnecki_Web_Developer_2022.pdf`}>
+            <span className={styles.downloadTitle}>English</span>
+          </a>
+          <span>|</span>
+          <a href={`Joe_Czarnecki_Web_Developer_2022_Deutsch.pdf`}>
+            <span className={styles.downloadTitle}>Deutsch</span>
+          </a>
         </div>
-      </IconContext.Provider>
+      )}
+      <div className={styles.iconWrapper}>
+        <IconContext.Provider value={{ className: "socialIcons" }}>
+          <a
+            href={social.github}
+            className={styles.links}
+            style={{ textDecorationColor: "black", border: "none" }}
+          >
+            <FiGithub className={styles.socialIcons} />
+          </a>
+          <a href={social.linkedIn} className={styles.links}>
+            <FiLinkedin className={styles.socialIcons} />
+          </a>
+          <div
+            onPointerDown={e => handleShowDownloads(e)}
+            className={styles.links}
+            id="downloads"
+          >
+            <AiOutlineFilePdf className={styles.socialIcons} />
+          </div>
+        </IconContext.Provider>
+      </div>
     </div>
   )
 }
