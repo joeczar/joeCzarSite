@@ -17,31 +17,55 @@
   position: relative;
   text-decoration: none;
   cursor: pointer;
+  transition: all .2s ease-in-out;
 }
 .socialIcons {
   height: 6em;
   width: 6em;
   stroke-width: 1;
   margin: auto 2em;
-  -webkit-animation: buzz 0.005s infinite;
-  animation: buzz 0.08s infinite ease-in-out;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+  /* -webkit-animation: buzz 0.005s infinite; */
+  /* animation: buzz 0.08s infinite ease-in-out; */
 }
+.downloadPlaceholder {
+  height:0em;
+  margin:2em;
+  border-radius: 50%;
+  width: 2em;
+}
+
+
 .downloads {
   display: flex;
   margin: 1em 1em 1em auto;
-  color: #8840ca;
-  
+  color: black;
+  height:2em;
   /* position: absolute; */
   /* top: -40px;
   right: 40px; */
   z-index: 900;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
   font-family: montserrat-alternates, sans-serif;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
 }
 .downloadTitle {
   padding: 1em;
+  color: black;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+.downloads:hover {
+  /* opacity: 1; */
+  background-color: rgba(255, 255, 255, 0.2);
+  transform:scale(1.1);
+ 
+}
+.links:hover, .socialIcons:hover, .downloadlink:hover, .downloadTitle:hover {
+  opacity: 1;
+  transform:scale(1.1);
   color: #8840ca;
 }
 

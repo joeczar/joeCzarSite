@@ -30,16 +30,24 @@ const Social = () => {
   }
   return (
     <div className={styles.container}>
-      {showDownloads && (
+      {showDownloads ? (
         <div className={styles.downloads} id="tooltip">
-          <a href={`Joe_Czarnecki_Web_Developer_2022.pdf`}>
+          <a
+            href={`Joe_Czarnecki_Web_Developer_2022.pdf`}
+            className={styles.downloadLink}
+          >
             <span className={styles.downloadTitle}>English</span>
           </a>
           <span>|</span>
-          <a href={`Joe_Czarnecki_Web_Developer_2022_Deutsch.pdf`}>
+          <a
+            href={`Joe_Czarnecki_Web_Developer_2022_Deutsch.pdf`}
+            className={styles.downloadLink}
+          >
             <span className={styles.downloadTitle}>Deutsch</span>
           </a>
         </div>
+      ) : (
+        <div className={styles.downloadPlaceholder} />
       )}
       <div className={styles.iconWrapper}>
         <IconContext.Provider value={{ className: "socialIcons" }}>
